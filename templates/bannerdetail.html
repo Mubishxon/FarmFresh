@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="col-md-6">
+                    <div class="bg-secondary bg-fruit d-flex flex-column justify-content-center p-5" style="height: 300px;">
+                        <a  href="{% url 'bannerdetail' x.id %}"></a><h3 class="text-white mb-3">{{x.name}}</h3>
+                        <p class="text-white">{{x.bio}}</p>
+                        <a class="text-white fw-bold" href="">Read More<i class="bi bi-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+{% endblock content %}

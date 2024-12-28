@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row gx-5">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="d-flex h-100 border border-5 border-primary border-bottom-0 pt-4">
+                        <img class="img-fluid mt-auto mx-auto" src="{{x.img.url}} ">
+                    </div>
+                </div>
+                <div class="col-lg-6 pb-5">
+                    <div class="mb-3 pb-2">
+                        <h6 class="text-primary text-uppercase">About Us</h6>
+                        <a  href="{% url 'aboutdetail' x.id %}"></a><h1 class="display-5">{{x.name}}</h1>
+                    </div>
+                    <p class="mb-4">{{x.bio}}</p>
+                </div>
+            </div>
+{% endblock content %}

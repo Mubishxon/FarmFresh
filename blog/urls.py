@@ -1,0 +1,25 @@
+from django.urls import path
+from .views import index, about, blog, contact, detail, feature, product, service, team, testimonial, bannerdetail, aboutdetail, productsdetail, factsdetail, carouseldetail, featuresdetail, teamdetail, blogdetail, CarouselUpdateView, CarouselDeleteView, CarouselCreateView
+urlpatterns = [
+    path('', index, name='index'),
+    path('about/', about, name='about'),
+    path('blog/', blog, name='blog'),
+    path('contact/', contact, name='contact'),
+    path('detail/', detail, name='detail'),
+    path('feature/', feature, name='feature'),
+    path('product/', product, name='product'),
+    path('service/', service, name='service'),
+    path('team/', team, name='team'),
+    path('testimonial/', testimonial, name='testimonial'),
+    path('bannerdetail/<int:id>/', bannerdetail, name='bannerdetail'),
+    path('aboutdetail/<int:id>/', aboutdetail, name='aboutdetail'),
+    path('productsdetail/<int:id>/', productsdetail, name='productsdetail'),
+    path('factsdetail/<int:id>/', factsdetail, name='factsdetail'),
+    path('featuresdetail/<int:id>/', featuresdetail, name='featuresdetail'),
+    path('teamdetail/<int:id>/', teamdetail, name='teamdetail'),
+    path('blogdetail/<int:id>/', blogdetail, name='blogdetail'),
+    path('carouseldetail/<slug:carousel>/', carouseldetail, name='carouseldetail'),
+    path('carousel/edit/<slug>/', CarouselUpdateView.as_view(), name='carouselUpdate'),
+    path('carousel/delete/<slug>/', CarouselDeleteView.as_view(), name='carouselDelete'),
+    path('carousel/create', CarouselCreateView.as_view(), name='carouselCreate'),
+]
